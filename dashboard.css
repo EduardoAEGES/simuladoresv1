@@ -259,7 +259,9 @@ body {
     flex-grow: 1;
     padding: 30px 40px;
     overflow-y: auto;
+    overflow-x: auto;
     background-color: var(--white);
+    position: relative;
 }
 
 .panel-header h1 {
@@ -289,6 +291,12 @@ body {
     align-items: center;
     font-size: 11px;
     border-top: 1px solid #444;
+    flex-shrink: 0;
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 .dashboard-footer-slim strong {
@@ -858,7 +866,8 @@ body {
 
 /* ESTADOS FINANCIEROS (EEFF) STYLES */
 .eeff-body {
-    padding: 20px 10px; /* Reduced left padding */
+    padding: 20px 10px; 
+    padding-bottom: 30px;
 }
 
 .eeff-header-row {
@@ -896,6 +905,7 @@ body {
     grid-template-columns: 1fr 1fr !important; 
     gap: 0 15px !important;
     width: 100% !important;
+    min-width: 950px;
 }
 
 .eeff-row {
@@ -1169,8 +1179,8 @@ body {
 }
 
 .eeff-body {
-    max-width: 950px; 
-    margin: 0; /* Aligned to left as requested */
+    max-width: 100%; 
+    margin: 0;
 }
 
 .modal-table {
