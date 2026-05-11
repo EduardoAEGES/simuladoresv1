@@ -342,8 +342,8 @@ body {
 .main-tabs .tab-item {
     padding: 10px 30px;
     font-size: 14px;
-    font-weight: 700;
-    color: #888;
+    font-weight: 400;
+    color: #999;
     background-color: #F0F2F5;
     border: 1px solid transparent;
     border-bottom: none;
@@ -355,6 +355,7 @@ body {
 .main-tabs .tab-item.active {
     background-color: white;
     color: #444;
+    font-weight: 700;
     border: 1px solid #CCC;
     border-bottom: 1px solid white;
     margin-bottom: -1px;
@@ -372,6 +373,7 @@ body {
     padding: 8px 25px;
     font-size: 13px;
     color: #999;
+    font-weight: 400;
     border: 1px solid transparent;
     border-bottom: none;
     background-color: #FFF;
@@ -463,7 +465,7 @@ body {
     background-color: #0056b3;
     color: white;
     border: none;
-    padding: 12px 50px;
+    padding: 10px 50px;
     font-size: 15px;
     font-weight: 700;
     border-radius: 4px;
@@ -472,11 +474,37 @@ body {
     align-items: center;
     gap: 10px;
     transition: background-color 0.2s;
-    margin: 30px auto;
+    height: 45px;
 }
 
 .btn-next-blue:hover {
     background-color: #004494;
+}
+
+.btn-prev-sunat {
+    background-color: white;
+    color: #0056b3;
+    border: 1px solid #0056b3;
+    padding: 10px 40px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    height: 45px;
+}
+
+.btn-prev-sunat:hover {
+    background-color: #f0f7ff;
+}
+
+.form-footer-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 40px;
 }
 
 /* Aligned Fields (Informativa) */
@@ -703,7 +731,7 @@ body {
     border-radius: 4px;
     overflow: hidden;
     display: none;
-    z-index: 2001;
+    z-index: 5000;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
@@ -802,7 +830,7 @@ body {
 
 /* ESTADOS FINANCIEROS (EEFF) STYLES */
 .eeff-body {
-    padding: 20px 40px;
+    padding: 20px 10px; /* Reduced left padding */
 }
 
 .eeff-header-row {
@@ -837,8 +865,8 @@ body {
 
 .eeff-grid {
     display: grid !important;
-    grid-template-columns: 1.1fr 1fr !important; /* Slightly wider left column for long labels */
-    gap: 0 60px !important;
+    grid-template-columns: 1fr 1fr !important; 
+    gap: 0 15px !important;
     width: 100% !important;
 }
 
@@ -856,12 +884,13 @@ body {
     flex: 1;
     padding-right: 20px;
     line-height: 1.3;
+    white-space: nowrap;
 }
 
 .eeff-input-group {
     display: flex;
     align-items: center;
-    width: 320px; /* Wider input group */
+    width: 195px; /* Even tighter for Activo */
     flex-shrink: 0;
 }
 
@@ -901,6 +930,160 @@ body {
     font-size: 14px;
     color: #333;
 }
+
+.currency-input.highlight-blue {
+    background-color: #e3f2fd !important;
+    border: 1px solid #bbdefb !important;
+}
+
+.currency-input.highlight-blue input {
+    background-color: transparent !important;
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+.currency-input.highlight-green {
+    background-color: #e8f5e9 !important;
+    border: 1px solid #c8e6c9 !important;
+}
+
+.currency-input.highlight-green input {
+    background-color: transparent !important;
+}
+
+.total-row-blue {
+    background-color: transparent;
+}
+
+/* MODAL STYLES */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background-color: white;
+    width: 600px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    background-color: #006699;
+    color: white;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.modal-header h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.close-modal {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.modal-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.modal-detail-grid {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-detail-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.modal-detail-row label {
+    flex: 1;
+    font-size: 13px;
+    color: #444;
+}
+
+.modal-detail-row .casilla-box {
+    width: 40px;
+    text-align: center;
+    background-color: #eee;
+    padding: 5px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+
+.modal-detail-row .input-container {
+    flex: 0 0 150px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: white;
+}
+
+.modal-detail-row .input-container span {
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.modal-detail-row .input-container input {
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: right;
+    font-size: 13px;
+}
+
+.modal-footer {
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #eee;
+}
+
+.btn-modal-cancel {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-modal-save {
+    background: #006699;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 
 .currency-input.highlight {
     background-color: #E1F5FE;
@@ -958,6 +1141,54 @@ body {
 }
 
 .eeff-body {
-    max-width: 1300px; /* Much wider for the two-column grid */
-    margin: 0 auto;
+    max-width: 950px; 
+    margin: 0; /* Aligned to left as requested */
 }
+
+.modal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.modal-table th {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 8px;
+    text-align: center;
+    color: #555;
+}
+
+.modal-table td {
+    border: 1px solid #dee2e6;
+    padding: 8px;
+    text-align: right;
+}
+
+.modal-table .empty-row {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+}
+
+.assistant-modal {
+    width: 450px !important;
+    z-index: 2100 !important;
+}
+
+.radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 15px 0;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
