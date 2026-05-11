@@ -204,6 +204,19 @@ body {
 
 .nav-list {
     list-style: none;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+.nav-list::-webkit-scrollbar {
+    height: 6px;
+}
+.nav-list::-webkit-scrollbar-track {
+    background: #f4f7f9;
+}
+.nav-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
 }
 
 .nav-item {
@@ -232,6 +245,19 @@ body {
     list-style: none;
     padding-left: 20px;
     display: none;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+.submenu::-webkit-scrollbar {
+    height: 6px;
+}
+.submenu::-webkit-scrollbar-track {
+    background: #f4f7f9;
+}
+.submenu::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
 }
 
 .nav-item.open > .submenu {
@@ -373,6 +399,10 @@ body {
 .main-tabs {
     display: flex;
     padding-left: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
 }
 
 .main-tabs .tab-item {
@@ -403,6 +433,10 @@ body {
     background-color: #FFFFFF;
     border-bottom: 1px solid #CCC;
     padding: 10px 0 0 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
 }
 
 .sub-tab-item {
@@ -1138,6 +1172,34 @@ body {
     background-color: #F0F2F5;
     padding: 10px 0 0 20px;
     border-bottom: 1px solid #CCC;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+}
+
+/* Scrollbar styles for dashboard menus */
+.main-tabs::-webkit-scrollbar, 
+.sub-tabs-bar::-webkit-scrollbar,
+.eeff-sub-tabs::-webkit-scrollbar {
+    height: 8px;
+}
+.main-tabs::-webkit-scrollbar-track, 
+.sub-tabs-bar::-webkit-scrollbar-track,
+.eeff-sub-tabs::-webkit-scrollbar-track {
+    background: #f4f7f9; 
+    border-radius: 4px;
+}
+.main-tabs::-webkit-scrollbar-thumb, 
+.sub-tabs-bar::-webkit-scrollbar-thumb,
+.eeff-sub-tabs::-webkit-scrollbar-thumb {
+    background: #c1c1c1; 
+    border-radius: 4px;
+}
+.main-tabs::-webkit-scrollbar-thumb:hover, 
+.sub-tabs-bar::-webkit-scrollbar-thumb:hover,
+.eeff-sub-tabs::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8; 
 }
 
 .eeff-tab {

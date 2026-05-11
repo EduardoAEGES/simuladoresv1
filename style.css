@@ -162,7 +162,9 @@ li {
 .breadcrumbs ul {
     display: flex;
     gap: 8px;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
     white-space: nowrap;
     padding-bottom: 4px;
 }
@@ -181,7 +183,9 @@ li {
 
 .nav-tabs ul {
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
     white-space: nowrap;
     padding-bottom: 6px;
 }
@@ -547,7 +551,9 @@ li {
     display: flex;
     background-color: #E3E9EE;
     border-radius: 4px 4px 0 0;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
     white-space: nowrap;
     padding-bottom: 6px;
 }
@@ -787,6 +793,34 @@ li {
     .sub-tabs {
         flex-direction: column;
         text-align: center;
+    }
+
+    .links-grid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 15px;
+    }
+    
+    .links-grid::-webkit-scrollbar {
+        height: 6px;
+    }
+    .links-grid::-webkit-scrollbar-track {
+        background: #f4f7f9;
+    }
+    .links-grid::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 4px;
+    }
+    
+    .links-grid .link-item {
+        min-width: 250px;
+        background: white;
+        padding: 10px 15px !important;
+        border-radius: 4px;
+        border: 1px solid #eee;
     }
 }
 
